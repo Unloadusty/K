@@ -119,7 +119,7 @@ double itc_pow(int x, int c) {
   int z = x;
   if (c > 0) {
     for (int i = 1; i < c; i++) {
-      x *= z;
+      x = x * z;
     }
     return x;
   }
@@ -128,7 +128,7 @@ double itc_pow(int x, int c) {
   }
   if (c < 0) {
     for (int i = 1; i < (c * -1); i++) {
-      x *= z;
+      x = x * z;
     }
     return 1.0 / x;
   }
