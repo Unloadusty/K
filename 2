@@ -1,167 +1,147 @@
 #include <iostream>
-
 using namespace std;
-void itc_name() { // 1 - имя / name
+void itc_name() {
   setlocale(LC_ALL, "Russia");
-  cout << "*** ";
+  cout << " Кирилл ";
 }
 
-void itc_fio() { // 2 - фио / fullname
+void itc_fio() { 
   setlocale(LC_ALL, "Russian");
   itc_name();
-  cout << "***** ******";
+  cout << "Штырков Ильич";
 }
 
-int itc_abs(int num) { // 3 - модуль / returns the absolute value of the given number ( int )
-  if (num >= 0) {
-    return num;
+int itc_abs(int x) {
+  if (x >= 0) {
+    return x;
   } else
-    return -num;
+    return -x;
 }
 
-double itc_fabs(double num) { // 4 - модуль числа с точкой / returns the absolute value of the given number( double )
-  if (num >= 0) {
-    return num;
+double itc_fabs(double x) {
+  if (x >= 0) {
+    return x;
   } else
-    return num * -1;
+    return x * -1;
 }
 
-int itc_revnbr(int num) { // 5 - трехзначное наоборот / flips a three digit number
-  if (num > 0)
-    return (100 * (num % 10)) + (10 * (num / 10 % 10)) + (1 * (num / 100));
+int itc_revnbr(int x) { 
+  if (x > 0)
+    return (1 * (x / 100)) + (10 * (x / 10 % 10)) + (100 * (x % 10));
 
   else {
-    num *= -1;
-    return (-100 * (num % 10)) + (-10 * (num / 10 % 10)) + (-1 * (num / 100));
+    x *= -1;
+    return (-10 * (x / 10 % 10)) + (-100 * (x % 10)) + (-1 * (x / 100));
   }
 }
 
-bool itc_iseven(int num) { // 6 - четное не четное / odd or even
-  if (num % 2 == 0)
+bool itc_iseven(int x) {
+  if (x % 2 == 0)
     return true;
   else
     return false;
 }
 
-int itc_max(int num, int num2) { // 7 - максимальное целое число / max int numb
-  if (num > num2)
-    return num;
+int itc_max(int x, int c) {
+    return x;
   else
-    return num2;
+    return c;
 }
 
-int itc_min(int min1, int min2) { // 8 - минимально целое число / min int numb
-  if (min1 > min2)
-    return min2;
+int itc_min(int x, int c) {
+  if (x > c)
+    return c;
   else
-    return min1;
+    return x;
 }
 
-double itc_fmax(double num,
-                double num2) { // 9 - максимальное вещественное число / max double numb
-  if (num > num2)
-    return num;
+double itc_fmax(double x,double c) {
+  if (x > c)
+    return x;
   else
-    return num2;
+    return c;
 }
 
-double itc_fmin(double num,
-                double num2) { // 10 - минимальное вещественное число / min double numd
-  if (num > num2)
-    return num2;
+double itc_fmin(double x,double c) {
+  if (x > c)
+    return c;
   else
-    return num;
+    return x;
 }
 
-int itc_sqrt(int num) { // 11 - КОРЕНЬ числа ВТФ / square root
-  if ( num > 0){
-  for (int i = 0; i < num; i++) {
-    if (num == i * i) {
+int itc_sqrt(int x) {
+  if ( x > 0){
+  for (int i = 0; i < x; i++) {
+    if (x == i * i) {
       return i;
     }
   }
     }
-  if ( num == 0){
+  if ( x == 0){
     return 0;
   }
   return -1;
 }
 
-int itc_skv(int num) { // 12 - площадь квадрата / area of square 
-  if (num > 0)
-    return num * num;
+int itc_skv(int x) { 
+  if (x > 0)
+    return x * x;
   else
     return -1;
 }
 
-int itc_spr(int a, int b) { // 13 - площадь прямоугольника / area of rectangle 
-  if (a > 0 && b > 0)
-    return a * b;
+int itc_spr(int x, int c) { 
+    return x * c;
   else
     return -1;
 }
 
-int itc_str(int a, int b, int c) { // 14 - площадь треугольника / area of triangle 
-  int p = (a + b + c) / 2, s = 0;
-  s = p * (p - a) * (p - b) * (p - c);
-  if (a > 0 && b > 0 && c > 0) {
-    if (itc_sqrt(s) > 0)
-    return itc_sqrt(s);
+int itc_str(int x, int c, int z) { 
+  int g = (x + c + z) / 2, f = 0;
+  f = g * (g - x) * (g - c) * (g - z);
+  if (x > 0 && c > 0 && z > 0) {
+    if (itc_sqrt(f) > 0)
+    return itc_sqrt(f);
   } 
   return -1;
 }
 
-
-
-double itc_scir(int radius) { // 15 - площадь круга через радиус / area of circle 
-  if (radius > 0)
-    return 3.14 * (radius * radius);
+double itc_scir(int r) {
+  if (r > 0)
+    return 3.14 * (r * r);
   else
     return -1;
 }
 
-double itc_pow(int num, int step) { // 16 - степень числа / numb of squared
-  int num_save = num;
-  if (step > 0) {
-    for (int i = 1; i < step; i++) {
-      num *= num_save;
+double itc_pow(int x, int c) { 
+  int z = x;
+  if (c > 0) {
+    for (int i = 1; i < c; i++) {
+      x *= z;
     }
-    return num;
+    return x;
   }
-  if (step == 0) {
+  if (c == 0) {
     return 1;
   }
-  if (step < 0) {
+  if (c < 0) {
     for (int i = 1; i < (step * -1); i++) {
-      num *= num_save;
+      x *= z;
     }
-    return 1.0 / num;
+    return 1.0 / x;
   }
 }
 
-bool itc_ispositive(
-    int num) { // 17 - целое число положительное или отрицательное / positive or negative number ( int )
-  if (num >= 0)
+bool itc_ispositive(int x) { 
+  if (x >= 0)
     return true;
-  if (num < 0)
+  if (x < 0)
     return false;
 }
 
-bool itc_ispositive_d(
-    double num) { // 18 - вещественное число положительное или отрицательное / positive or negative number ( double )
-  if (num >= 0)
+bool itc_ispositive_d(double x) { 
+  if (x >= 0)
     return true;
-  if (num < 0)
+  if (x < 0)
     return false;
-
 }
-Footer
-© 2022 GitHub, Inc.
-Footer navigation
-Terms
-Privacy
-Security
-Status
-Docs
-Contact GitHub
-Pricin
