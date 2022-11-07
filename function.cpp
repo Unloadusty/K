@@ -43,6 +43,7 @@ bool itc_iseven(int x) {
 }
 
 int itc_max(int x, int c) {
+if (x > c)
     return x;
   else
     return c;
@@ -91,6 +92,7 @@ int itc_skv(int x) {
 }
 
 int itc_spr(int x, int c) { 
+if (x > 0)
     return x * c;
   else
     return -1;
@@ -125,7 +127,7 @@ double itc_pow(int x, int c) {
     return 1;
   }
   if (c < 0) {
-    for (int i = 1; i < (step * -1); i++) {
+    for (int i = 1; i < (c * -1); i++) {
       x *= z;
     }
     return 1.0 / x;
